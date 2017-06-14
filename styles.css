@@ -1,0 +1,72 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  margin: 2vw;
+}
+
+img {
+  height: 15vw;
+  width: 15vw;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 3vw;
+  text-align: center;
+}
+
+span {
+  border-bottom: 2px solid green;
+}
+
+.name {
+  margin-bottom: 0.5vw;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.email {
+  color: gray;
+  font-size: .8vw;
+  padding-bottom: 0.5vw;
+}
+
+.customers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 15vw;
+  margin-left: 15vw;
+}
+
+.customers div {
+  font-family: sans-serif;
+  font-size: 1vw;
+  flex-basis: 25%;
+  flex-wrap: nowrap;
+  padding-top: 5vw;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.street {
+  font-size: .8vw;
+  text-transform: capitalize;
+}
+
+.location {
+  font-size: .8vw;
+  text-transform: capitalize;
+}
