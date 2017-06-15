@@ -13,41 +13,38 @@ fetch('https://randomuser.me/api/?results=12')
         return;
       }
 
+
+
       response.json().then(function(data){
-        for (let i=0; i<12; i++){
-        let image = data.results[i].picture.large;
-        let fullName = data.results[i].name.first + ' ' + data.results[i].name.last;
-        // console.log(fullName);
-        let email = data.results[i].email;
-        // console.log(email);
-        let street = data.results[i].location.street;
-        // console.log(street);
-        let location = data.results[i].location.city + ", " + data.results[i].location.state + " " + data.results[i].location.postcode;
-        // console.log(cityStateZip);
-        let phone = data.results[i].phone;
 
+        function markup() {
+          let image = resultsArr[i].picture.large;
+          let fullName = resultsArr[i].name.first + ' ' + data.results[0].name.last;
+          let email = resultsArr[i].email;
+          let street = resultsArr[i].location.street;
+          let location = resultsArr[i].location.city + ", " + data.results[0].location.state + " " + data.results[0].location.postcode;
+          let phone = resultsArr[i].phone;
+          let markup =
 
-        let markup = `
-
-
-          <div class= customer">
-            <img src='${image}'</img>
-            <p class='name'><span>${fullName}</span></p>
-            <p class='email'>${email}</p>
-            <p class='street'>${street}</p>
-            <p class='location'>${location}</p>
-            <p class='phone'>${phone}</p>
-          </div>
-
-
-
-        `
+            `
+              <div class= customer">
+                <img src='${image}'</img>
+                <p class='name'><span>${fullName}</span></p>
+                <p class='email'>${email}</p>
+                <p class='street'>${street}</p>
+                <p class='location'>${location}</p
+                <p class='phone'>${phone}</p>
+              </div>
+            `
+            return markup;
+        }
 
         let customersDiv = document.querySelector('.customers');
+        let resultsArr = data.results;
 
+        for (var i=0; i<12; i++) {
 
-        customersDiv.innerHTML += markup;
-
+        customersDiv.innerHTML += markup();
 
       }
     })
