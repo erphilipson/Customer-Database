@@ -17,12 +17,15 @@ fetch('https://randomuser.me/api/?results=12')
 
       response.json().then(function(data){
 
+        let customersDiv = document.querySelector('.customers');
+        let resultsArr = data.results;
+
         function markup() {
           let image = resultsArr[i].picture.large;
-          let fullName = resultsArr[i].name.first + ' ' + data.results[0].name.last;
+          let fullName = resultsArr[i].name.first + ' ' + data.results[i].name.last;
           let email = resultsArr[i].email;
           let street = resultsArr[i].location.street;
-          let location = resultsArr[i].location.city + ", " + data.results[0].location.state + " " + data.results[0].location.postcode;
+          let location = resultsArr[i].location.city + ", " + data.results[i].location.state + " " + data.results[i].location.postcode;
           let phone = resultsArr[i].phone;
           let markup =
 
@@ -38,9 +41,6 @@ fetch('https://randomuser.me/api/?results=12')
             `
             return markup;
         }
-
-        let customersDiv = document.querySelector('.customers');
-        let resultsArr = data.results;
 
         for (var i=0; i<12; i++) {
 
